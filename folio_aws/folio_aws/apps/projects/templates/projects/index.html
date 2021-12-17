@@ -1,0 +1,44 @@
+{% extends "generic/base.html" %}
+{% load static %}
+
+{% block bootstrap_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'generic/base.css' %}">
+
+{% endblock %}
+
+{% block page_name %}
+    <h1>PROJECTS</h1>
+{% endblock %}
+
+{% block page_content %}
+    <div class="row">
+        {% for project in project_list %}
+            <div class="col-lg-3 mb-3 d-flex align-items-stretch">
+                <div class="card" >
+                    <img class="card-img-top" src="{% static project.image %}">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
+                        <div>
+                            <a href="{% url 'projects:project_detail' project.pk %}"
+                               class="button blue">
+                                <div class="bottom"></div>
+                                <div class="top">
+                                    <div class="label">Read More</div>
+                                    <div class="button-border button-border-left"></div>
+                                    <div class="button-border button-border-top"></div>
+                                    <div class="button-border button-border-right"></div>
+                                    <div class="button-border button-border-bottom"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class = "bodytext">No projects in that language... yet... </p>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}

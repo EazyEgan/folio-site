@@ -1,0 +1,96 @@
+{% extends "generic/base.html" %}
+{% load static %}
+
+{% block bootstrap_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'generic/base.css' %}">
+
+{% endblock %}
+
+{% block page_name %}
+    <h1>HOME</h1>
+{% endblock %}
+
+{% block page_content %}
+
+    <div style="width: 60%; float: left;">
+        <h2>Summary</h2>
+        <p class = "bodytext">
+            I am a young computer science graduate from Dublin.
+            I am a persistent <br>hard worker. I have always had a strong
+            imagination and ability to learn and<br> infer very quickly.
+            I have been interested in computers for a long time, having<br>
+            made my first website at the age of 9 and my first
+            cryptocurrency purchase<br> at age 12. I like to find new ways to
+            do things and work to improve what<br> already exists. I am very
+            interpersonal and social. From past projects and<br>
+            collaborations, I know that I can both lead and follow in many
+            settings.</p>
+        <h2>Specialist Areas</h2>
+        <p class = "bodytext">
+            Machine Learning,
+            Mobile/Web App Development,
+            Data Processing,
+            Wireless Technologies,
+            Computer Vision
+
+        </p>
+        <h2>Languages</h2>
+        <p class = "bodytext">
+            Python,
+            Java,
+            HTML,
+            CSS,
+            JavaScript,
+            C,
+            Swift,
+            SQL,
+            Haskell,
+            Dart
+
+        </p>
+        <h2>Frameworks</h2>
+        <p class = "bodytext">
+            Django,
+            Vue.js,
+            React,
+            Flutter,
+            Node.js,
+            Express
+
+        </p>
+    </div>
+    <div style="width: 40%; float: right;">
+        <h2>Other Systems</h2>
+        <p class = "bodytext">
+            Git,
+            PostgreSQL,
+            SQLite,
+            Firebase,
+            Pandas,
+            SciPy,
+            Scikit learn,
+            NumPy,
+            REST APIs,
+            Bootstrap
+        </p>
+        <h2>Qualifications</h2>
+        <p class = "bodytext">
+            First Class Honours, B.A. Mod, Computer Science, Trinity College Dublin
+        </p>
+        <h2>Accomplishments</h2>
+        <p class = "bodytext">
+            Automated transition between stock systems in using regular expressions and other algorithmic operations in Hyde Interiors.
+            Achieved a 100% mark on an IEEE standard tutorial paper on loT and lightweight cryptography.
+            Successfully provided many small businesses around Leinster with contactless menu solutions with a pandemic start-up.
+            Worked to automate internal procedures within Transdev (responsible for running LUAS).
+            Worked as team lead to develop an application to be used to assist farmers in third world countries to report and tackle crop pest infestations.
+            While in my final year, I encouraged my computer science first year tutees to go the extra mile in a module in which I was a demonstrator, all of whom achieved a first class honours in that module. I did this by relating to the students and re-framing problems and approaches.
+            Successfully created a low-power low-fidelity music decomposer and A.I. lightshow automation system for my thesis project for which I was awarded a first class honours.
+        </p>
+    </div>
+    <br style="clear:both;"/>
+
+
+
+{% endblock %}

@@ -1,0 +1,2 @@
+Set manage.py and settings.py in IDE settings,
+install psycopg2
