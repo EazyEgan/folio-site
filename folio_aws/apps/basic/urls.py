@@ -2,7 +2,8 @@
 
 from . import views
 
-#To get from a URL to a view, Django uses what are known as ‘URLconfs’. A URLconf maps URL patterns to views.
+#To get from a URL to a view, Django uses what are known as ‘URLconfs’.
+A URLconf maps URL patterns to views.
 app_name = 'projects'
 
 urlpatterns = [

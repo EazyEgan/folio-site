@@ -3,7 +3,10 @@
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+.ebextensions/folio-env-app-config.json
+.ebextensions/bucket-secrets.config
 
 # Secret info
 .folio_aws/secrets.py
 .env
+

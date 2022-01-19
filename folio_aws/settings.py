@@ -2,71 +2,62 @@ import os
 from pathlib import Path
 import subprocess
 import ast
+import dotenv
+from dotenv import load_dotenv
+import json
 
-
-# Unfortunately EB won't access variables stored in environment so must do the
-# below
-def get_environ_vars():
-    completed_process = subprocess.run(
-        ['/opt/elasticbeanstalk/bin/get-config', 'environment'],
-        stdout=subprocess.PIPE,
-        text=True,
-        check=True
-    )
-    return ast.literal_eval(completed_process.stdout)
-
-
+DEBUG = False # i.e. Run locally or not
 BASE_DIR = Path(__file__).resolve().parent.parent
-env_vars = get_environ_vars()
-SECRET_KEY = env_vars['SECRET_KEY']
 
-DEBUG = env_vars['DJANGO_DEBUG']
+if DEBUG:
+    load_dotenv()
 
-if DEBUG == '1':
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+
     ALLOWED_HOSTS = ['127.0.0.1']
 
     DATABASES = {
         'default': {
-            'ENGINE': env_vars['LOCAL_ENGINE'],
-            'NAME': env_vars['LOCAL_NAME'],
-            'USER': env_vars['LOCAL_USER'],
-            'PASSWORD': env_vars['LOCAL_PASSWORD'],
-            'HOST': env_vars['LOCAL_HOST'],
-            'PORT': env_vars['LOCAL_PORT'],
+            'ENGINE': os.environ.get('LOCAL_ENGINE'),
+            'NAME': os.environ.get('LOCAL_NAME'),
+            'USER': os.environ.get('LOCAL_USER'),
+            'PASSWORD': os.environ.get('LOCAL_PASSWORD'),
+            'HOST': os.environ.get('LOCAL_HOST'),
+            'PORT': os.environ.get('LOCAL_PORT'),
         }
     }
 
+
+
 else:
+    # If DEBUG=False use production settings - wll only ever be on AWS if in
+    # prod
+    # Parse the JSON file and retrieve our settings.
+    SETTINGS = None
+    with open(BASE_DIR.parent.parent.parent.parent / 'tmp/folio-env-app-config.json') as f:
+        SETTINGS = json.load(f)
+
+
+    SECRET_KEY = SETTINGS['SECRET_KEY']
+
+    # Use the settings to connect to our DB:
+    DATABASES = {
+        'default': {
+            'ENGINE':   'django.db.backends.postgresql',
+            'NAME':     SETTINGS['RDS_DB_NAME'],
+            'USER':     SETTINGS['RDS_USERNAME'],
+            'PASSWORD': SETTINGS['RDS_PASSWORD'],
+            'HOST':     SETTINGS['RDS_HOSTNAME'],
+            'PORT':     SETTINGS['RDS_PORT'],
+        }
+    }
+
     ALLOWED_HOSTS = [
-        env_vars['AWS_HOST_NAME']
-    ]
+            SETTINGS['AWS_HOST_NAME']
+        ]
 
-    # Using centralised credentials for production environment as this is
-    # not committed and also for immutability.
-
-    if 'RDS_HOSTNAME' in os.environ:
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': os.environ['RDS_DB_NAME'],
-                'USER': os.environ['RDS_USERNAME'],
-                'PASSWORD': os.environ['RDS_PASSWORD'],
-                'HOST': os.environ['RDS_HOSTNAME'],
-                'PORT': os.environ['RDS_PORT'],
-            }
-        }
-
-    else:
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': env_vars['RDS_DB_NAME'],
-                'USER': env_vars['RDS_USERNAME'],
-                'PASSWORD': env_vars['RDS_PASSWORD'],
-                'HOST': env_vars['RDS_HOSTNAME'],
-                'PORT': env_vars['RDS_PORT'],
-            }
-        }
+        # Using centralised credentials for production environment as this is
+        # not committed and also for immutability.
 
     AUTH_PASSWORD_VALIDATORS = [
         {
