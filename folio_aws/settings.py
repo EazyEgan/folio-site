@@ -34,7 +34,8 @@ else:
     # prod
     # Parse the JSON file and retrieve our settings.
     SETTINGS = None
-    with open(BASE_DIR.parent.parent.parent.parent / 'tmp/folio-env-app-config.json') as f:
+    with open(BASE_DIR.parent.parent.parent.parent
+              / 'tmp/folio-env-app-config.json') as f:
         SETTINGS = json.load(f)
 
 
