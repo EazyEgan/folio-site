@@ -6,7 +6,8 @@ import dotenv
 from dotenv import load_dotenv
 import json
 
-DEBUG = False # i.e. Run locally or not
+# i.e. Run locally or not
+DEBUG = False
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 if DEBUG:
