@@ -8,6 +8,7 @@ import json
 
 # i.e. Run locally or not
 DEBUG = False
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 if DEBUG:
