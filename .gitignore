@@ -7,6 +7,6 @@
 .ebextensions/bucket-secrets.config
 
 # Secret info
-.folio_aws/secrets.py
+folio_aws/secrets.py
 .env
 
