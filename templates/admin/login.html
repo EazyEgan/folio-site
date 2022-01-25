@@ -10,39 +10,35 @@
 {% endblock %}
 
 {% block page_content %}
-    <div class="col-lg-3 mb-3 d-flex align-items-stretch">
-        <div class="card">
-            <div class="card-body d-flex flex-column">
-                <form id="login_form" class="form" role="form" method="POST">
-                    {% csrf_token %}
-                    <div class="form-row"  style = "padding-bottom: 10px">
-                        {{ form.username.errors }}
-                        <p class = "bodytext" id="username_input_field">Username: </p>
-                        {{ form.username }}
-                    </div>
-                    <div class="form-row" style = "padding-bottom: 10px">
-                        {{ form.password.errors }}
-                        <p class = "bodytext" id="password_input_field">Password: </p>
-                        {{ form.password }}
-                        <input type="hidden" name="next" value="{{ next }}">
-                    </div>
-                    <div class="submit-row"  style="padding-bottom: 10px">
-                        <a href="#"
-                           onclick="document.getElementById('login_form').submit()"
-                           class="button blue">
-                            <div class="bottom"></div>
-                            <div class="top">
-                                <div class="label">Log in</div>
-                                <div class="button-border button-border-left"></div>
-                                <div class="button-border button-border-top"></div>
-                                <div class="button-border button-border-right"></div>
-                                <div class="button-border button-border-bottom"></div>
-                            </div>
-                        </a>
-                    </div>
-                </form>
+
+    <form id="login_form" class="form" role="form" method="POST">
+        {% csrf_token %}
+        <div class="form-column" style="padding-bottom: 10px">
+            {{ form.username.errors }}
+            <p class="bodytext" id="username_input_field">Username: </p>
+            <div>{{ form.username }}
             </div>
         </div>
-    </div>
+        <div class="form-column" style="padding-bottom: 20px">
+            {{ form.password.errors }}
+            <p class="bodytext" id="password_input_field">Password: </p>
+            <div style="position:relative">{{ form.password }}</div>
+            <input type="hidden" name="next" value="{{ next }}">
+        </div>
+        <div class="submit-row" style="padding-bottom: 70px">
+            <a href="#"
+               onclick="document.getElementById('login_form').submit()"
+               class="button blue">
+                <div class="bottom"></div>
+                <div class="top">
+                    <div class="label">Log in</div>
+                    <div class="button-border button-border-left"></div>
+                    <div class="button-border button-border-top"></div>
+                    <div class="button-border button-border-right"></div>
+                    <div class="button-border button-border-bottom"></div>
+                </div>
+            </a>
+        </div>
+    </form>
 
 {% endblock %}
