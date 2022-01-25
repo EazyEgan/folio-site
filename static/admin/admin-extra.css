@@ -4,3 +4,366 @@
     --accent: #f5dd5d;
     --primary-fg: #fff;
 }
+html {
+    border: 0px;
+    margin: 10px 60px;
+    padding: 0;
+
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+
+body {
+
+    background: repeating-linear-gradient(0deg, transparent, transparent 1px, #110e23 1px, #110e23 40px),
+    repeating-linear-gradient(-90deg, transparent, transparent 1px, #110e23 1px, #110e23 40px),
+    linear-gradient(225deg, #110e23, #110e23, #110e23, transparent, #110e23, transparent, #110e23, transparent, #110e23, transparent),
+    linear-gradient(315deg, #110e23, #d9eae6, #110e23, #110e23, #110e23, #d9eae6, #110e23, #d9eae6, #110e23, #d9eae6);
+
+    background-size: 10px 10px, 10px 10px, 1200% 1200%, 1200% 1200%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    -o-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+    }
+    50% {
+        background-position: 0% 0%, 0% 0%, 88% 100%, 88% 100%
+    }
+    100% {
+        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+    }
+    50% {
+        background-position: 0% 0%, 0% 0%, 88% 100%, 88% 100%
+    }
+    100% {
+        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+    }
+}
+
+@-o-keyframes AnimationName {
+    0% {
+        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+    }
+    50% {
+        background-position: 0% 0%, 0% 0%, 88% 100%, 88% 100%
+    }
+    100% {
+        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+    }
+    50% {
+        background-position: 0% 0%, 0% 0%, 88% 100%, 88% 100%
+    }
+    100% {
+        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+    }
+}
+
+.card {
+    border-radius: 0rem;
+}
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+
+        margin-right: 100px;
+    }
+}
+
+#backingbox {
+    background-color: ghostwhite;
+    padding: 20px 30px;
+    border: 1px solid white;
+    --notchSize: 20px;
+
+    clip-path: polygon(
+            0% var(--notchSize),
+            var(--notchSize) 0%,
+            calc(100% - var(--notchSize)) 0%,
+            100% var(--notchSize),
+            100% calc(100% - var(--notchSize)),
+            calc(100% - var(--notchSize)) 100%,
+            var(--notchSize) 100%,
+            0% calc(100% - var(--notchSize))
+    );
+}
+
+.navbar {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.dropdown {
+    position: static;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 63px 0;
+    min-width: 160px;
+
+
+}
+
+.dropdown:hover .dropdown-content {
+
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+}
+
+
+h1 {
+    font-family: helvetica neue, helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 3em;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+
+p.normal {
+    font-family: helvetica neue, helvetica, sans-serif;
+    font-weight: normal;
+}
+
+p.heading {
+    font-size: 3em;
+}
+
+
+p.subheading {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+p.bodytext {
+
+    font-weight: 500;
+    font-size: 1em;
+
+}
+
+b {
+
+    display: block;
+    font-family: helvetica neue, helvetica, sans-serif;
+    line-height: 1.15em;
+    margin-top: -1.15em;
+    top: 2.3em;
+    font-size: 0.67em;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    opacity: 0.75;
+    text-align: center;
+
+}
+
+b span {
+    font-size: 0.785em;
+    font-weight: 400;
+    opacity: 0.4;
+}
+
+#intro {
+
+    margin: 0px auto 0;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    float: left;
+    position: relative;
+    margin-top: 0px;
+    z-index: 1;
+
+}
+
+.button.blue {
+    --primary-color: #2acdc1;
+    --secondary-color: #04049d;
+    --tertiary-color: #fff;
+}
+
+.button.green {
+    --primary-color: #383e42; /*#03A062;*/
+    --secondary-color: #00ff41;
+    --tertiary-color: #92e5a1;
+}
+
+.button.neon {
+    --primary-color: #110E23; /*#03A062;*/
+    --secondary-color: #ff2468;
+    --tertiary-color: #F54379;
+}
+
+.button.mono {
+    --primary-color: #110E23; /*#03A062;*/
+    --secondary-color: #fff;
+    --tertiary-color: #fff;
+}
+
+.button .bottom {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    display: block;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.button .top {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 24px 34px 22px 34px;
+    border: 2px solid var(--secondary-color);
+}
+
+.button-dark .top {
+    border: 2px solid var(--tertiary-color);
+}
+
+.button .top .label {
+    font-family: sans-serif;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 12px;
+    line-height: 110%;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all .15s ease-out;
+    -moz-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.button-dark .top .label {
+    color: var(--tertiary-color);
+}
+
+.button:hover .bottom {
+    left: 0;
+    top: 0;
+    background-color: var(--tertiary-color);
+}
+
+.button:hover .top .label {
+    color: var(--primary-color);
+}
+
+.button-border {
+    position: absolute;
+    background-color: var(--primary-color);
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+
+.button:hover .top .button-border-left, .button:hover .top .button-border-right {
+    height: calc(100% + 2px);
+}
+
+.button:hover .top .button-border-top, .button:hover .top .button-border-bottom {
+    width: calc(100% + 2px);
+}
+
+.button-border-left {
+    left: -2px;
+    bottom: -2px;
+    width: 2px;
+    height: 0;
+}
+
+.button-border-top {
+    left: -2px;
+    top: -2px;
+    width: 0;
+    height: 2px;
+}
+
+.button-border-right {
+    right: -2px;
+    top: -2px;
+    width: 2px;
+    height: 0;
+}
+
+.button-border-bottom {
+    right: -2px;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+}
