@@ -20,62 +20,62 @@ body {
 
     background: repeating-linear-gradient(0deg, transparent, transparent 1px, #110e23 1px, #110e23 40px),
     repeating-linear-gradient(-90deg, transparent, transparent 1px, #110e23 1px, #110e23 40px),
-    linear-gradient(225deg, #110e23, #110e23, #110e23, transparent, #110e23, transparent, #110e23, transparent, #110e23, transparent),
+    linear-gradient(45deg, #110e23, transparent, #110e23, transparent, #110e23, transparent, #110e23, transparent, #110e23, transparent),
     linear-gradient(315deg, #110e23, #d9eae6, #110e23, #110e23, #110e23, #d9eae6, #110e23, #d9eae6, #110e23, #d9eae6);
 
-    background-size: 10px 10px, 10px 10px, 1200% 1200%, 1200% 1200%;
+    background-size: 10px 10px, 10px 10px, 2600% 2600%, 2600% 2600%;
 
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    -o-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
+    -webkit-animation: AnimationName 60s ease infinite;
+    -moz-animation: AnimationName 60s ease infinite;
+    -o-animation: AnimationName 60s ease infinite;
+    animation: AnimationName 60s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
     0% {
-        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+        background-position: 0% 0%, 0% 0%, 100% 0%, 1% 0%
     }
     50% {
-        background-position: 0% 0%, 0% 0%, 88% 100%, 88% 100%
+        background-position: 0% 0%, 0% 0%, 0% 100%, 99% 100%
     }
     100% {
-        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+        background-position: 0% 0%, 0% 0%, 100% 0%, 1% 0%
     }
 }
 
 @-moz-keyframes AnimationName {
     0% {
-        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+        background-position: 0% 0%, 0% 0%, 100% 0%, 1% 0%
     }
     50% {
-        background-position: 0% 0%, 0% 0%, 88% 100%, 88% 100%
+        background-position: 0% 0%, 0% 0%, 0% 100%, 99% 100%
     }
     100% {
-        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+        background-position: 0% 0%, 0% 0%, 100% 0%, 1% 0%
     }
 }
 
 @-o-keyframes AnimationName {
     0% {
-        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+        background-position: 0% 0%, 0% 0%, 100% 0%, 1% 0%
     }
     50% {
-        background-position: 0% 0%, 0% 0%, 88% 100%, 88% 100%
+        background-position: 0% 0%, 0% 0%, 0% 100%, 99% 100%
     }
     100% {
-        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+        background-position: 0% 0%, 0% 0%, 100% 0%, 1% 0%
     }
 }
 
 @keyframes AnimationName {
     0% {
-        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+        background-position: 0% 0%, 0% 0%, 95% 5%, 5% 5%
     }
     50% {
-        background-position: 0% 0%, 0% 0%, 88% 100%, 88% 100%
+        background-position: 0% 0%, 0% 0%, 5% 95%, 95% 95%
     }
     100% {
-        background-position: 0% 0%, 0% 0%, 13% 0%, 13% 0%
+        background-position: 0% 0%, 0% 0%, 95% 5%, 5% 5%
     }
 }
 
