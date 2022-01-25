@@ -6,7 +6,6 @@
 .ebextensions/folio-env-app-config.json
 .ebextensions/bucket-secrets.config
 
-# Secret info
-folio_aws/secrets.py
+# Local environment variables
 .env
 
