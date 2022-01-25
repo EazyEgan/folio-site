@@ -179,13 +179,22 @@
 </nav>
 {% endblock %}
 
+{% block page_name_div %}
 <div id = "backingbox">
+{% endblock %}
+
     {% block page_name %}
     {% endblock %}
 </div>
+
+
+{% block content_div %}
 <div id = "backingbox">
+{% endblock %}
+
     {% block page_content %}
     {% endblock %}
+
 </div>
 
 {% block bootstrap_js %}

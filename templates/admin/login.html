@@ -5,11 +5,20 @@
 {% block navbar %}
 {% endblock %}
 
+{% block page_name_div %}
+<div id = "backingbox" style = "max-width: 300px; margin: 0 auto;">
+{% endblock %}
+
 {% block page_name %}
     <h1>LOG IN</h1>
 {% endblock %}
 
+{% block content_div %}
+<div id = "backingbox" style = "max-width: 300px; margin: 0 auto;">
+{% endblock %}
+
 {% block page_content %}
+
 
     <form id="login_form" class="form" role="form" method="POST">
         {% csrf_token %}
@@ -40,5 +49,6 @@
             </a>
         </div>
     </form>
+
 
 {% endblock %}

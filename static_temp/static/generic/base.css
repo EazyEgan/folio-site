@@ -110,6 +110,20 @@ body {
     );
 }
 
+#backingboxshrink {
+    background-color: ghostwhite;
+    padding: 20px 30px;
+    border: 1px solid white;
+    --notchSize: 20px;
+
+    clip-path: polygon(
+            0% var(--notchSize), var(--notchSize) 0%,
+            calc(100% - var(--notchSize)) 0%, 100% var(--notchSize),
+            100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%,
+            var(--notchSize) 100%, 0% calc(100% - var(--notchSize))
+    );
+}
+
 .navbar {
     position: static;
     display: -webkit-box;
