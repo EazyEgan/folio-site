@@ -10,11 +10,14 @@
     {% block bootstrap_css %}
         <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" >
     {% endblock %}
+{%  block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'generic/base.css' %}">
+{%  endblock %}
     <link rel="shortcut icon" href="{% static 'generic/images/favicon.ico' %}" />
 </head>
 
 <body>
-
+{% block navbar %}
 <nav class="navbar navbar-expand-md ">
     <a href="{% url 'basic:home_index' %}" class="navbar-brand">
 
@@ -174,7 +177,7 @@
         </li>
     </ul>
 </nav>
-
+{% endblock %}
 
 <div id = "backingbox">
     {% block page_name %}

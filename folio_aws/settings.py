@@ -104,6 +104,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'folio_aws.urls'
 
+LOGIN_REDIRECT_URL = '/admin'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
