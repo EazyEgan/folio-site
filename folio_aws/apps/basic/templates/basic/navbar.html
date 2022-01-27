@@ -1,0 +1,60 @@
+{%  load static %}
+<nav class="navbar navbar-expand-md ">
+    <a href="{% url 'basic:home_index' %}" class="navbar-brand">
+        <img src="{% static 'generic/images/LiamEganNewLogo.png' %}"
+             width="700" alt="Liam Egan"
+             class="d-inline-block align-middle mr-2">
+    </a>
+
+    <ul class="navbar-nav mr-auto">
+
+        {% for navbar_button in navbar_buttons %}
+            {% if navbar_button.has_dropdown %}
+                <li class="dropdown">
+                    {% else %}
+                <li class="nav-item">
+
+            {% endif %}
+
+            <a href="{% url navbar_button.page %}"style="z-index: 1;"
+               class="button neon">
+                <div class="bottom"></div>
+                <div class="top">
+                    <div class="label">{{ navbar_button.title }}</div>
+                    <div class="button-border button-border-left"></div>
+                    <div class="button-border button-border-top"></div>
+                    <div class="button-border button-border-right"></div>
+                    <div class="button-border button-border-bottom"></div>
+                </div>
+            </a>
+
+            {% if navbar_button.has_dropdown %}
+                <form action="{% url navbar_button.page %}"
+                      method="GET">
+                    {% csrf_token %}
+                    <div class="dropdown-content" >
+                        {% for dropdown_button in navbar_button.dropdownbutton_set.all %}
+                            <button style="padding: 0; background-color: transparent; border: none; outline: none;z-index: 2;"
+                                    type="submit" name="lang"
+                                    value="{{ dropdown_button.data }}"
+                                    id="{{ dropdown_button.data }}">
+                                <a href="{% url navbar_button.page %}"
+                                   class="button mono">
+                                    <div class="bottom"></div>
+                                    <div class="top">
+                                        <div class="label">{{ dropdown_button.title }}</div>
+                                        <div class="button-border button-border-left"></div>
+                                        <div class="button-border button-border-top"></div>
+                                        <div class="button-border button-border-right"></div>
+                                        <div class="button-border button-border-bottom"></div>
+                                    </div>
+                                </a>
+                            </button>
+                        {% endfor %}
+                    </div>
+                </form>
+            {% endif %}
+        {% endfor %}
+        </li>
+    </ul>
+</nav>

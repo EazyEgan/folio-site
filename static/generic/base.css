@@ -145,11 +145,13 @@ body {
 }
 
 .dropdown {
+
     position: static;
     display: inline-block;
 }
 
 .dropdown-content {
+
     display: none;
     position: absolute;
     padding: 63px 0;
@@ -159,7 +161,6 @@ body {
 }
 
 .dropdown:hover .dropdown-content {
-
     display: flex;
     position: absolute;
     flex-wrap: wrap;

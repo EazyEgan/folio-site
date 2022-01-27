@@ -10,7 +10,6 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('lang')
-        # print(query)
         if query:
             q = Q()
             q |= Q(languages__icontains=query)
@@ -18,18 +17,18 @@ class IndexView(generic.ListView):
 
         return Project.objects.all()
 
-
-def project_index(request):
-    projects = Project.objects.all()
-    context = {
-        'projects': projects
-    }
-    return render(request, 'projects/home_index.html', context)
-
-
 def project_detail(request, pk):
     project = Project.objects.get(pk=pk)
     context = {
         'project': project
     }
     return render(request, 'projects/detail.html', context)
+
+"""
+class DetailView(generic.DetailView):
+    model = Question
+    template_name = 'yourApp/detail.html'
+    def get_queryset(self):
+        return Question.objects.filter(pub_date__lte=timezone.now())
+
+"""

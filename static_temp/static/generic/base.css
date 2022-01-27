@@ -150,10 +150,12 @@ body {
 }
 
 .dropdown-content {
+
     display: none;
     position: absolute;
     padding: 63px 0;
     min-width: 160px;
+
 
 
 }
@@ -232,7 +234,7 @@ b span {
     float: left;
     position: relative;
     margin-top: 0px;
-    z-index: 1;
+
 
 }
 

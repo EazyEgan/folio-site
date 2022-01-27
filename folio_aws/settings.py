@@ -82,7 +82,7 @@ else:
     ]
 
 INSTALLED_APPS = [
-    'folio_aws.apps.basic.apps.HomeConfig',
+    'folio_aws.apps.basic.apps.SummaryConfig',
     'folio_aws.apps.projects.apps.ProjectsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -109,7 +109,7 @@ LOGIN_REDIRECT_URL = '/admin'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates', BASE_DIR / 'folio_aws/apps/basic/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,6 +117,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'folio_aws.apps.basic.context_processors.navbar_processor'
             ],
         },
     },
