@@ -17,7 +17,7 @@ class NavBarView(generic.ListView):
     context_object_name = 'navbar_buttons'
 
     def get_queryset(self):
-        return NavBarButton.objects.all()
+        return NavBarButton.objects.all().order_by('order')
 
 
 def contact(request):

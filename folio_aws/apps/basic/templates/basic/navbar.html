@@ -1,4 +1,4 @@
-{%  load static %}
+{% load static %}
 <nav class="navbar navbar-expand-md ">
     <a href="{% url 'basic:home_index' %}" class="navbar-brand">
         <img src="{% static 'generic/images/LiamEganNewLogo.png' %}"
@@ -8,7 +8,7 @@
 
     <ul class="navbar-nav mr-auto">
 
-        {% for navbar_button in navbar_buttons %}
+        {% for navbar_button in navbar_buttons|dictsort:"order" %}
             {% if navbar_button.has_dropdown %}
                 <li class="dropdown">
                     {% else %}
@@ -16,7 +16,7 @@
 
             {% endif %}
 
-            <a href="{% url navbar_button.page %}"style="z-index: 1;"
+            <a href="{% url navbar_button.page %}" style="z-index: 1;"
                class="button neon">
                 <div class="bottom"></div>
                 <div class="top">
@@ -32,8 +32,8 @@
                 <form action="{% url navbar_button.page %}"
                       method="GET">
                     {% csrf_token %}
-                    <div class="dropdown-content" >
-                        {% for dropdown_button in navbar_button.dropdownbutton_set.all %}
+                    <div class="dropdown-content">
+                        {% for dropdown_button in navbar_button.dropdownbutton_set.all|dictsort:"order" %}
                             <button style="padding: 0; background-color: transparent; border: none; outline: none;z-index: 2;"
                                     type="submit" name="lang"
                                     value="{{ dropdown_button.data }}"

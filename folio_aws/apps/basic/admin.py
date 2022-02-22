@@ -16,14 +16,14 @@ admin.site.register(Summary, SummaryAdmin)
 
 class DropDownButtonInline(admin.TabularInline):
     model = DropDownButton
-    extra = 10
+    extra = 3
 
 
 class NavBarButtonAdmin(admin.ModelAdmin):
-    list_display = ('title', 'page', 'has_dropdown')
+    list_display = ('title', 'order', 'page', 'has_dropdown')
     search_fields = ['title', 'page', 'has_dropdown']
     fieldsets = [
-        (None, {'fields': ['title', 'page', 'has_dropdown']}),
+        (None, {'fields': ['title', 'order', 'page', 'has_dropdown']}),
     ]
 
     inlines = [DropDownButtonInline]

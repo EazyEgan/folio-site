@@ -4,14 +4,14 @@ from .models import Project
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'languages', 'repo', 'image')
+    list_display = ('title', 'order', 'description', 'languages', 'repo', 'image')
     search_fields = ['title', 'languages']
     fieldsets = [
-        (None, {'fields': ['title', 'description', 'languages', 'repo',
+        (None, {'fields': ['title', 'order', 'description', 'languages', 'repo',
                            'image_path', 'image_tag']}),
     ]
 
-    readonly_fields = ['image_tag', 'languages']
+    readonly_fields = ['id','image_tag', 'languages']
 
 
 admin.site.register(Project, ProjectAdmin)

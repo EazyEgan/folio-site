@@ -13,9 +13,9 @@ class IndexView(generic.ListView):
         if query:
             q = Q()
             q |= Q(languages__icontains=query)
-            return Project.objects.filter(q)
+            return Project.objects.filter(q).order_by('order')
 
-        return Project.objects.all()
+        return Project.objects.all().order_by('order')
 
 def project_detail(request, pk):
     project = Project.objects.get(pk=pk)
